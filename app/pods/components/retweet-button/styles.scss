@@ -1,0 +1,12 @@
+& {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+
+  &.retweeted {
+    color: #17bf63;
+  }
+}

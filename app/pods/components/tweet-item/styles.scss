@@ -1,0 +1,87 @@
+& {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3125;
+}
+
+> .box {
+  display: flex;
+  flex-direction: row;
+
+  > .column {
+    flex: 1;
+    margin: 0 .3rem;
+    min-width: 32px;
+  }
+
+  > .content {
+    flex: 7;
+    margin: 0 .3rem;
+  }
+}
+
+> .retweet-header {
+  margin-bottom: .65625rem;
+  color: #657786;
+  font-family: sans-serif;
+  > .column {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 13px;
+  }
+}
+
+> .tweet {
+  > .column {
+    .user-avatar {
+      width: 100%;
+    }
+  }
+
+  > .content {
+    header {
+      line-height: 1.3125;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+
+      .headline {
+        display: flex;
+
+        .poster {
+          flex: 1;
+          a {
+            color: inherit;
+          }
+          .name {
+            font-weight: bold;
+          }
+
+          .screen-name {
+            color: #657786;
+          }
+        }
+
+        time {
+          color: #657786;
+        }
+      }
+
+      .reply {
+        .text {
+          color: #657786;
+        }
+      }
+    }
+
+    footer {
+      margin-top: .65625rem;
+      color: #657786;
+
+      button {
+        margin-right: 10%;
+      }
+    }
+  }
+}

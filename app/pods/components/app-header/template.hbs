@@ -1,0 +1,17 @@
+<div class="app-container">
+    <div class="user-title">
+        {{user-avatar user=user}}
+
+        <div class="header-block">
+            {{yield}}
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li>{{#link-to 'index'}}{{home-button}}{{/link-to}}</li>
+            <li>{{#link-to 'search'}}{{search-button}}{{/link-to}}</li>
+            <li><a>{{bell-button}}</a></li>
+            <li><a>{{message-button}}</a></li>
+        </ul>
+    </nav>
+</div>

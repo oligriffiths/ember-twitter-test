@@ -1,0 +1,13 @@
+& {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 1rem .65rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #ccd6dd;
+  }
+}

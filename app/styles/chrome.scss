@@ -1,0 +1,24 @@
+.header-container {
+  height: 6.5rem;
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transition: transform 0.3s;
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.compose-button {
+  position: absolute;
+  bottom: 21px;
+  right: 21px;
+}

@@ -1,0 +1,53 @@
+{{#if tweet.retweeted_status}}
+    <header class="retweet-header box">
+        <div class="column">
+            {{retweet-button}}
+        </div>
+        <div class="content">
+            {{user.name}} Retweeted
+        </div>
+    </header>
+
+    {{tweet-item tweet=tweet.retweeted_status class="retweet"}}
+{{else}}
+    <article class="tweet box">
+        <div class="column">
+            {{user-avatar user=user}}
+        </div>
+
+        <section class="content">
+            <header>
+                <div class="headline">
+                    <div class="poster">
+                        <a href="#">
+                            <strong class="name">{{user.name}}</strong>
+                            <span class="screen-name">@{{user.screen_name}}</span>
+                        </a>
+                    </div>
+
+                    <time class="date">
+                        {{formattedDate}}
+                    </time>
+                </div>
+
+                {{#if tweet.in_reply_to_screen_name}}
+                    <div class="reply">
+                        <span class="text">Replying to</span>
+                        <span class="reply-name"><a href="">@{{tweet.in_reply_to_screen_name}}</a></span>
+                    </div>
+                {{/if}}
+            </header>
+
+            <article>
+                {{text}}
+            </article>
+
+            <footer>
+                {{reply-button}}
+                {{retweet-button count=tweet.retweet_count retweeted=tweet.retweeted}}
+                {{like-button count=tweet.favorite_count favorited=tweet.favorited}}
+                {{message-button}}
+            </footer>
+        </section>
+    </article>
+{{/if}}
