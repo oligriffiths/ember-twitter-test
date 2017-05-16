@@ -11,9 +11,11 @@
     {{tweet-item tweet=tweet.retweeted_status class="retweet"}}
 {{else}}
     <article class="tweet box">
-        <div class="column">
-            {{user-avatar user=user}}
-        </div>
+        {{#if (not quoted)}}
+            <div class="column">
+                {{user-avatar user=user}}
+            </div>
+        {{/if}}
 
         <section class="content">
             <header>
@@ -25,9 +27,11 @@
                         </a>
                     </div>
 
-                    <time class="date">
-                        {{formattedDate}}
-                    </time>
+                    {{#if (not quoted)}}
+                        <time class="date">
+                            {{formattedDate}}
+                        </time>
+                    {{/if}}
                 </div>
 
                 {{#if tweet.in_reply_to_screen_name}}
@@ -38,16 +42,20 @@
                 {{/if}}
             </header>
 
-            <article>
-                {{text}}
-            </article>
+            <article><pre>{{text}}</pre></article>
 
-            <footer>
-                {{reply-button}}
-                {{retweet-button count=tweet.retweet_count retweeted=tweet.retweeted}}
-                {{like-button count=tweet.favorite_count favorited=tweet.favorited}}
-                {{message-button}}
-            </footer>
+            {{#if tweet.quoted_status}}
+                {{tweet-item tweet=tweet.quoted_status quoted=true class="quoted-tweet"}}
+            {{/if}}
+
+            {{#if (not quoted)}}
+                <footer>
+                    {{reply-button}}
+                    {{retweet-button count=tweet.retweet_count retweeted=tweet.retweeted}}
+                    {{like-button count=tweet.favorite_count favorited=tweet.favorited}}
+                    {{message-button}}
+                </footer>
+            {{/if}}
         </section>
     </article>
 {{/if}}

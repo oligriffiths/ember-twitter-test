@@ -40,6 +40,8 @@
     }
   }
 
+
+
   > .content {
     header {
       line-height: 1.3125;
@@ -73,6 +75,17 @@
           color: #657786;
         }
       }
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .quoted-tweet {
+      border: 1px solid #ccc;
+      border-radius: .35rem;
+      padding: .65625rem;
     }
 
     footer {
